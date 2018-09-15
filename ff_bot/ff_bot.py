@@ -219,7 +219,7 @@ def bot_main(function):
             text = str(os.environ["INIT_MSG"])
             if text=="hide":
                 pass
-            elif text ="power_rankings":
+            elif text=="power_rankings":
                 text = get_power_rankings(league)
                 bot.send_message(text)
             else:
