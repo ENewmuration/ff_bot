@@ -167,8 +167,8 @@ def get_trophies(league):
     return '\n'.join(text)
 
 def bot_main(function):
-    bot_id = os.environ["BOT_ID"]
-    league_id = os.environ["LEAGUE_ID"]
+    bot_id = str(os.environ["BOT_ID"])
+    league_id = str(os.environ["LEAGUE_ID"])
 
     try:
         year = os.environ["LEAGUE_YEAR"]
@@ -216,8 +216,13 @@ def bot_main(function):
             bot.send_message(text)
     elif function=="init":
         try:
-            text = os.environ["INIT_MSG"]
-            bot.send_message(text)
+            text = str(os.environ["INIT_MSG"])
+            if text=="power_rankings":
+                print(text)
+            elif text!="hide"
+                bot.send_message(text)
+            else
+                pass
         except KeyError:
             #do nothing here, empty init message
             pass
@@ -238,7 +243,7 @@ if __name__ == '__main__':
         ff_end_date='2018-12-26'
 
     try:
-        myTimezone = os.environ["TIMEZONE"]
+        myTimezone = str(os.environ["TIMEZONE"])
     except KeyError:
         myTimezone='America/Chicago'
 
