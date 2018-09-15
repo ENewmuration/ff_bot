@@ -219,9 +219,10 @@ def bot_main(function):
             text = str(os.environ["INIT_MSG"])
             if text=="hide":
                 pass
+            elif text ="power_rankings":
+                text = get_power_rankings(league)
+                bot.send_message(text)
             else:
-                if text ="power_rankings":
-                    text = get_power_rankings(league)
                 bot.send_message(text)
         except KeyError:
             #do nothing here, empty init message
